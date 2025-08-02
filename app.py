@@ -53,4 +53,16 @@ st.pyplot(fig3)
 # 4. Scatterplot Week vs Demand (colored by Promo)
 st.markdown("**4. Weekly Demand Colored by Promotion**")
 fig4, ax4 = plt.subplots()
-sns.scatterplot(x='Week', y='Demand',
+sns.scatterplot(x='Week', y='Demand', hue='Promo', data=df, ax=ax4)
+ax4.set_title("Week vs Demand Scatter Plot")
+st.pyplot(fig4)
+
+# 5. Boxplot: Price vs Demand
+st.markdown("**5. Demand by Product Price**")
+fig5, ax5 = plt.subplots()
+sns.boxplot(x='Price', y='Demand', data=df, ax=ax5)
+ax5.set_title("Price vs Demand")
+st.pyplot(fig5)
+
+st.success("✅ Visualizations ready. Use this page to support your business reporting.")
+
